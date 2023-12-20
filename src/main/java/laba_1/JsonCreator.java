@@ -1,2 +1,4 @@
-package laba_1;public @interface JsonCreator {
+package laba_1;
+
+public @interface JsonCreator {
 }

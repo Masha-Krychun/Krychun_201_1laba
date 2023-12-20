@@ -4,13 +4,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @XmlRootElement
-public class SampleEntity implements Serializable {
+public class SampleEntity implements Comparable<SampleEntity>, Serializable {
     private String name;
     private int age;
     private String email;
 
     public SampleEntity() {
-        // Конструктор за замовчуванням (обов'язково)
     }
 
     public SampleEntity(String name, int age, String email) {
@@ -19,7 +18,7 @@ public class SampleEntity implements Serializable {
         this.email = email;
     }
 
-    // Гетери та сетери для полів (обов'язково)
+    // Getters and setters for fields
     public String getName() {
         return name;
     }
@@ -42,6 +41,13 @@ public class SampleEntity implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public int compareTo(SampleEntity other) {
+        // Implement comparison logic based on your requirements
+        // For example, let's compare by name
+        return this.name.compareTo(other.name);
     }
 
     @Override
